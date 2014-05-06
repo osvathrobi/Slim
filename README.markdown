@@ -1,3 +1,9 @@
+This fork: adds a new method to Routes -> getAllRoutes()
+
+This is usefull if someone is writing an API and wants to write a methodto list all routes to write a debug app to test and check the API.
+
+Ex: the api has a revealAPI method that lists all routes. This can then be used to make a drop down list with all the routes so you can make a neat debugger interface for your API.
+
 # Slim Framework
 
 [![Build Status](https://secure.travis-ci.org/codeguy/Slim.png?branch=master)](http://travis-ci.org/codeguy/Slim)
