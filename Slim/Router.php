@@ -120,6 +120,26 @@ class Router
     }
 
     /**
++     * Return route objects that match the given HTTP method (Robi)
++     * @param  string               $httpMethod   The HTTP method to match against
++     * @return array[\Slim\Route]
++     */
++    public function getAllRoutes($httpMethod)
++    {
++
++        $this->matchedRoutes = array();
++        foreach ($this->routes as $route) {
++            if (!$route->supportsHttpMethod($httpMethod) && !$route->supportsHttpMethod("ANY")) {
++                continue;
++            }
++            $this->matchedRoutes[] = $route;
++        }
++        
++        return $this->matchedRoutes;
++    }
+
+
+    /**
      * Add a route object to the router
      * @param  \Slim\Route     $route      The Slim Route
      */
